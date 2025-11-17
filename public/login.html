@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FlightDeck</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">FlightDeck</a>
+            <div class="nav-links">
+                <a href="/signup" class="btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Welcome Back</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div id="error" class="error-message"></div>
+                <button type="submit" class="btn-primary btn-full">Login</button>
+            </form>
+            <p class="auth-link">Don't have an account? <a href="/signup">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script src="/js/login.js"></script>
+</body>
+</html>
