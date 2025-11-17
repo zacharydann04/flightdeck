@@ -42,7 +42,8 @@ def create_app(config_name=None):
     return app
 
 
-# For direct execution (development)
+# For direct execution (development only)
+# In production, use WSGI server: gunicorn -w 4 'app:create_app("production")'
 app = create_app()
 
 if __name__ == '__main__':

@@ -209,19 +209,37 @@ def test_create_post():
 
 ### Production Setup
 
-1. Use production WSGI server (Gunicorn, uWSGI):
+**CRITICAL: Never run Flask's development server in production!**
+
+1. **Use production WSGI server** (Gunicorn, uWSGI):
 ```bash
+# Install Gunicorn
 pip install gunicorn
+
+# Run with production config (debug mode disabled)
+export FLASK_ENV=production
 gunicorn -w 4 -b 0.0.0.0:8000 'app:create_app("production")'
 ```
 
-2. Use production database (PostgreSQL recommended)
+2. **Use production database** (PostgreSQL recommended):
+```bash
+export DATABASE_URL="postgresql://user:password@localhost/flightdeck"
+```
 
-3. Enable HTTPS (SESSION_COOKIE_SECURE=True)
+3. **Enable HTTPS** - Set security flags:
+```bash
+export SESSION_COOKIE_SECURE=true
+```
 
-4. Use environment variables for secrets
+4. **Use environment variables for secrets**:
+```bash
+export SECRET_KEY="your-random-secret-key"
+export DATABASE_URL="your-database-url"
+```
 
-5. Set up media CDN for static assets
+5. **Set up media CDN** for static assets (CloudFlare, AWS CloudFront)
+
+6. **Disable debug mode** - Ensured in production config (config/settings.py)
 
 ### Docker Support
 
