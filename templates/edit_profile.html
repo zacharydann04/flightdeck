@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Profile - FlightDeck{% endblock %}
+
+{% block content %}
+<div class="profile-edit">
+    <h2>Edit Your Profile</h2>
+    
+    <form method="POST" action="{{ url_for('users.edit_profile') }}">
+        <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea id="bio" name="bio" rows="4">{{ current_user.bio }}</textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a href="{{ url_for('users.profile', username=current_user.username) }}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
