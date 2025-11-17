@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to FlightDeck{% endblock %}
+
+{% block content %}
+<div class="landing">
+    <h1>Welcome to FlightDeck</h1>
+    <p class="subtitle">Your social media platform for sharing moments and connecting with others</p>
+    
+    <div class="landing-actions">
+        <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Get Started</a>
+        <a href="{{ url_for('auth.login') }}" class="btn btn-secondary">Login</a>
+    </div>
+    
+    <div class="features">
+        <div class="feature">
+            <h3>Share Your Moments</h3>
+            <p>Create posts and share your thoughts with the community</p>
+        </div>
+        <div class="feature">
+            <h3>Connect with Others</h3>
+            <p>Like and comment on posts from other users</p>
+        </div>
+        <div class="feature">
+            <h3>Build Your Profile</h3>
+            <p>Customize your profile and showcase your content</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

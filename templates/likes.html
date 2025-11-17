@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Likes - FlightDeck{% endblock %}
+
+{% block content %}
+<div class="likes-view">
+    <h2>People who liked this post</h2>
+    
+    <div class="post-preview">
+        <p><strong>@{{ post.author.username }}</strong>: {{ post.content[:100] }}{% if post.content|length > 100 %}...{% endif %}</p>
+    </div>
+    
+    {% if post.likes %}
+        <div class="users-list">
+            {% for like in post.likes %}
+                <div class="user-item">
+                    <a href="{{ url_for('users.profile', username=like.user.username) }}">
+                        @{{ like.user.username }}
+                    </a>
+                    <span class="like-date">{{ like.created_at.strftime('%Y-%m-%d %H:%M') }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p class="empty-state">No likes yet. Be the first!</p>
+    {% endif %}
+    
+    <a href="{{ url_for('posts.view_post', post_id=post.id) }}" class="btn btn-secondary">Back to Post</a>
+</div>
+{% endblock %}
