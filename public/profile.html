@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - FlightDeck</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">FlightDeck</a>
+            <div class="nav-links" id="navLinks">
+                <a href="/login" class="btn-link" id="loginLink">Login</a>
+                <a href="/signup" class="btn-primary" id="signupLink">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-picture-container">
+                    <img id="profilePicture" src="/css/default-avatar.svg" alt="Profile Picture" class="profile-picture">
+                </div>
+                <div class="profile-info">
+                    <h1 id="username">Loading...</h1>
+                    <p id="fullName" class="profile-full-name"></p>
+                    <p id="bio" class="profile-bio"></p>
+                    <div id="editButton" class="profile-actions" style="display: none;">
+                        <a href="/edit-profile" class="btn-primary">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div class="stat">
+                    <span class="stat-label">Member Since</span>
+                    <span id="memberSince" class="stat-value">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+</html>
